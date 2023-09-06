@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Tab = createBottomTabNavigator();
+import { Ionicons } from '@expo/vector-icons'; // Import icons (use your preferred library)
 
 function ChatScreen() {
   return (
@@ -49,9 +50,30 @@ export default function App() {
 
           
         <Tab.Navigator  initialRouteName="Home">
-          <Tab.Screen name="Chat" component={ChatScreen} />
-          <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name="Profile" component={ProfileScreen} />
+          <Tab.Screen name="Chat" component={ChatScreen} 
+            options={{
+            tabBarLabel: 'Chat', // Tab label
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="chatbubbles-outline" size={size} color={color} /> // Icon for Home tab
+              ),
+            }}
+          />
+          <Tab.Screen name="Home" component={HomeScreen}
+            options={{
+            tabBarLabel: 'Home', // Tab label
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="planet-outline" size={size} color={color} /> // Icon for Home tab
+              ),
+            }}
+          />
+          <Tab.Screen name="Profile" component={ProfileScreen} 
+            options={{
+            tabBarLabel: 'Profile', // Tab label
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="person-outline" size={size} color={color} /> // Icon for Home tab
+              ),
+            }}
+            />
         </Tab.Navigator>
 
 

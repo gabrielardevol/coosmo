@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -11,10 +11,14 @@ function ChatScreen() {
   );
 }
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen (options: headerShown: false)</Text>
+      <Button
+        title="Go to chat"
+        onPress={() => navigation.navigate('Chat')}
+      />
     </View>
   );
 }
@@ -40,6 +44,7 @@ export default function App() {
           <Stack.Screen name="Chat" component={ChatScreen} />
         </Stack.Navigator>
 
+   
     </NavigationContainer>
   );
 }

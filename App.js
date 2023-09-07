@@ -7,13 +7,18 @@ const Tab = createBottomTabNavigator();
 import { Ionicons } from '@expo/vector-icons'; // Import icons (use your preferred library)
 import Icon from 'react-native-vector-icons/FontAwesome'; // Use the appropriate icon library
 
-function ChatScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Chat Screen </Text>
-    </View>
-  );
-}
+import HomeScreen from './src/screens/Home'; // Replace with the correct path to your component
+import ChatScreen from './src/screens/Chat'; // Replace with the correct path to your component
+import ProfileScreen from './src/screens/Profile'; // Replace with the correct path to your component
+
+
+// function ChatScreen() {
+//   return (
+//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//       <Text>Chat Screen </Text>
+//     </View>
+//   );
+// }
 
 function HomeStack() {
   return (
@@ -21,19 +26,19 @@ function HomeStack() {
   )
 }
 
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: "red" }} >
-      <View style={{backgroundColor: "green", alignItems: 'flex-end'}}>
+// function HomeScreen({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: "red" }} >
+//       <View style={{backgroundColor: "green", alignItems: 'flex-end'}}>
   
-      </View>
+//       </View>
 
-      <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center', justifyContent: "center"}}>
-      <Text>Home Screeen (options: headerShown: falsssse)</Text>
-      </View>
-    </View>
-  );
-}
+//       <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center', justifyContent: "center"}}>
+//       <Text>Home Screeen (options: headerShown: falsssse)</Text>
+//       </View>
+//     </View>
+//   );
+// }
 
 function HomeHamburguerScreen({ navigation }) {
   return (
@@ -49,13 +54,13 @@ function HomeHamburguerScreen({ navigation }) {
   );
 }
 
-function ProfileScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Profile Screen </Text>
-    </View>
-  );
-}
+// function ProfileScreen() {
+//   return (
+//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//       <Text>Profile Screen </Text>
+//     </View>
+//   );
+// }
 
 const Stack = createNativeStackNavigator();
 

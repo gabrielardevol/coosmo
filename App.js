@@ -1,3 +1,6 @@
+import 'react-native-gesture-handler';
+
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -12,33 +15,12 @@ import ChatScreen from './src/screens/Chat'; // Replace with the correct path to
 import ProfileScreen from './src/screens/Profile'; // Replace with the correct path to your component
 
 
-// function ChatScreen() {
-//   return (
-//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//       <Text>Chat Screen </Text>
-//     </View>
-//   );
-// }
-
+const Stack = createNativeStackNavigator();
 function HomeStack() {
   return (
     <View></View>
   )
 }
-
-// function HomeScreen({ navigation }) {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: "red" }} >
-//       <View style={{backgroundColor: "green", alignItems: 'flex-end'}}>
-  
-//       </View>
-
-//       <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center', justifyContent: "center"}}>
-//       <Text>Home Screeen (options: headerShown: falsssse)</Text>
-//       </View>
-//     </View>
-//   );
-// }
 
 function HomeHamburguerScreen({ navigation }) {
   return (
@@ -54,15 +36,8 @@ function HomeHamburguerScreen({ navigation }) {
   );
 }
 
-// function ProfileScreen() {
-//   return (
-//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//       <Text>Profile Screen </Text>
-//     </View>
-//   );
-// }
 
-const Stack = createNativeStackNavigator();
+
 
 
 export default function App() {

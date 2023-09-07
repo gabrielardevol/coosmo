@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 function HomeScreen({ navigation }) {
     return (
@@ -8,7 +9,7 @@ function HomeScreen({ navigation }) {
         </View>
   
         <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center', justifyContent: "center"}}>
-        <Text>Home Screen (options: headerShown: falsssse)</Text>
+        <Text>Home Screen (options: headerShown: false)</Text>
         </View>
       </View>
     );

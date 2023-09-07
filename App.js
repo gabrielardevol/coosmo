@@ -25,7 +25,7 @@ function HomeScreen({ navigation }) {
         />
       </View>
 
-      <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center'}}>
+      <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center', justifyContent: "center"}}>
       <Text>Home Screeen (options: headerShown: falsssse)</Text>
       <Button
         title="Go to chat"

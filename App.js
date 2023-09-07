@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Tab = createBottomTabNavigator();
 import { Ionicons } from '@expo/vector-icons'; // Import icons (use your preferred library)
+import Icon from 'react-native-vector-icons/FontAwesome'; // Use the appropriate icon library
 
 function ChatScreen() {
   return (
@@ -19,18 +20,19 @@ function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: "red" }}>
       <View style={{backgroundColor: "green", alignItems: 'flex-end'}}>
-        <Button
-          title="Go to chat"
-          onPress={() => navigation.navigate('Profile')}
-        />
+      <TouchableOpacity
+      style={styles.button}
+      onPress={() => navigation.navigate('Profile')}
+    >
+      <Text style={styles.buttonText}>
+        <Icon name="bars" size={40} color="white" />
+        {'  '}
+      </Text>
+    </TouchableOpacity>
       </View>
 
       <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center', justifyContent: "center"}}>
       <Text>Home Screeen (options: headerShown: falsssse)</Text>
-      <Button
-        title="Go to chat"
-        onPress={() => navigation.navigate('Profile')}
-      />
       </View>
     </View>
 

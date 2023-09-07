@@ -22,20 +22,6 @@ function HomeStack() {
   )
 }
 
-function HomeHamburguerScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: "red" }} >
-      <View style={{backgroundColor: "green", alignItems: 'flex-end'}}>
-  
-      </View>
-
-      <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center', justifyContent: "center"}}>
-      <Text>Home Screeen (options: headerShown: falsssse)</Text>
-      </View>
-    </View>
-  );
-}
-
 
 
 
@@ -55,18 +41,8 @@ export default function App() {
           />
           <Tab.Screen name="Home" component={HomeScreen}
             options={{
-              headerTitle:  '',
-              headerRight: () => (
-                <TouchableOpacity
-                  style={styles.button}
-                  // onPress={() => navigation.navigate('Profile')}
-                >
-                  <Text style={styles.buttonText}>
-                    <Icon name="bars" size={30} color="black" />
-                    {'  '}
-                  </Text>
-                </TouchableOpacity>
-              ),            
+              headerShown: false,
+              headerTitle:  '',           
               tabBarLabel: 'Home', // Tab label
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="planet-outline" size={size} color={color} /> // Icon for Home tab

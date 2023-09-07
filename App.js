@@ -15,30 +15,39 @@ function ChatScreen() {
   );
 }
 
+function HomeStack() {
+  return (
+    <View></View>
+  )
+}
 
 function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: "red" }}>
+    <View style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: "red" }} >
       <View style={{backgroundColor: "green", alignItems: 'flex-end'}}>
-      <TouchableOpacity
-      style={styles.button}
-      onPress={() => navigation.navigate('Profile')}
-    >
-      <Text style={styles.buttonText}>
-        <Icon name="bars" size={40} color="white" />
-        {'  '}
-      </Text>
-    </TouchableOpacity>
+  
       </View>
 
       <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center', justifyContent: "center"}}>
       <Text>Home Screeen (options: headerShown: falsssse)</Text>
       </View>
     </View>
-
   );
 }
 
+function HomeHamburguerScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: "red" }} >
+      <View style={{backgroundColor: "green", alignItems: 'flex-end'}}>
+  
+      </View>
+
+      <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center', justifyContent: "center"}}>
+      <Text>Home Screeen (options: headerShown: falsssse)</Text>
+      </View>
+    </View>
+  );
+}
 
 function ProfileScreen() {
   return (
@@ -54,17 +63,10 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-{/* 
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Profile" component={ProfileScreen} />
-          <Stack.Screen name="Chat" component={ChatScreen} /> */}
-        {/* </Stack.Navigator> */}
-
-          
         <Tab.Navigator  initialRouteName="Home">
           <Tab.Screen name="Chat" component={ChatScreen} 
             options={{
+         
             tabBarLabel: 'Chat', // Tab label
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="chatbubbles-outline" size={size} color={color} /> // Icon for Home tab
@@ -73,7 +75,19 @@ export default function App() {
           />
           <Tab.Screen name="Home" component={HomeScreen}
             options={{
-            tabBarLabel: 'Home', // Tab label
+              headerTitle:  '',
+              headerRight: () => (
+                <TouchableOpacity
+                  style={styles.button}
+                  // onPress={() => navigation.navigate('Profile')}
+                >
+                  <Text style={styles.buttonText}>
+                    <Icon name="bars" size={30} color="black" />
+                    {'  '}
+                  </Text>
+                </TouchableOpacity>
+              ),            
+              tabBarLabel: 'Home', // Tab label
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="planet-outline" size={size} color={color} /> // Icon for Home tab
               ),

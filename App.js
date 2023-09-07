@@ -14,18 +14,29 @@ function ChatScreen() {
   );
 }
 
+
 function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screeen (options: headerShown: false)</Text>
+    <View style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: "red" }}>
+      <View style={{backgroundColor: "green", alignItems: 'flex-end'}}>
+        <Button
+          title="Go to chat"
+          onPress={() => navigation.navigate('Profile')}
+        />
+      </View>
+
+      <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center'}}>
+      <Text>Home Screeen (options: headerShown: falsssse)</Text>
       <Button
         title="Go to chat"
-        onPress={() => navigation.navigate('Chat')}
+        onPress={() => navigation.navigate('Profile')}
       />
-
+      </View>
     </View>
+
   );
 }
+
 
 function ProfileScreen() {
   return (

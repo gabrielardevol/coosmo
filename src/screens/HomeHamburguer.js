@@ -11,3 +11,9 @@ function NatalChart() {
         <View />
     )
 }
+
+function Horoscope() {
+    return (
+        <View />
+    )
+}

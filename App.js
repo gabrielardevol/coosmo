@@ -1,54 +1,28 @@
+import 'react-native-gesture-handler';
+
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Tab = createBottomTabNavigator();
 import { Ionicons } from '@expo/vector-icons'; // Import icons (use your preferred library)
+import Icon from 'react-native-vector-icons/FontAwesome'; // Use the appropriate icon library
 
-function ChatScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Chat Screen </Text>
-    </View>
-  );
-}
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screeen (options: headerShown: false)</Text>
-      <Button
-        title="Go to chat"
-        onPress={() => navigation.navigate('Chat')}
-      />
-
-    </View>
-  );
-}
-
-function ProfileScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Profile Screen </Text>
-    </View>
-  );
-}
+import HomeScreen from './src/screens/Home'; // Replace with the correct path to your component
+import ChatScreen from './src/screens/Chat'; // Replace with the correct path to your component
+import ProfileScreen from './src/screens/Profile'; // Replace with the correct path to your component
 
 const Stack = createNativeStackNavigator();
-
+function HomeStack() {
+  return (
+    <View></View>
+  )
+}
 
 export default function App() {
   return (
     <NavigationContainer>
-{/* 
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Profile" component={ProfileScreen} />
-          <Stack.Screen name="Chat" component={ChatScreen} /> */}
-        {/* </Stack.Navigator> */}
-
-          
         <Tab.Navigator  initialRouteName="Home">
           <Tab.Screen name="Chat" component={ChatScreen} 
             options={{
@@ -60,7 +34,9 @@ export default function App() {
           />
           <Tab.Screen name="Home" component={HomeScreen}
             options={{
-            tabBarLabel: 'Home', // Tab label
+              headerShown: false,
+              headerTitle:  '',           
+              tabBarLabel: 'Home', // Tab label
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="planet-outline" size={size} color={color} /> // Icon for Home tab
               ),
@@ -75,8 +51,6 @@ export default function App() {
             }}
             />
         </Tab.Navigator>
-
-
     </NavigationContainer>
   );
 }

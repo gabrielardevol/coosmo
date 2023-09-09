@@ -9,19 +9,21 @@ import { faPen } from '@fortawesome/free-solid-svg-icons/faPen'
 
 function ProfileScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <View >
-        <View style={[styles.container, { width: 150, height: 150 }]}>      
-          <Image source={pfpImage} style={styles.image} />
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',  }}>
+      <View style={{backgroundColor: "green", flex: 1, justifyContent: "center"}}>
+        <View>
+          <View style={[styles.container, { width: 150, height: 150 }]}>      
+            <Image source={pfpImage} style={styles.image} />
+          </View>
+          <View style={[styles.imageButton, { width: 50, height: 50 }]}>   
+            <FontAwesomeIcon icon={ faPen } size={ 28 } />   
+          </View>
         </View>
-      {/* <Image source={pfpImage} style={styles.imageButton} /> */}
-      <View style={[styles.imageButton, { width: 50, height: 50 }]}>   
-        <FontAwesomeIcon icon={ faPen } size={ 28 } />   
       </View>
 
-
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Hola</Text>
       </View>
-
 
       <View style={{ flex: 1 }}>
         <Text>Hola</Text>
@@ -55,10 +57,9 @@ const styles = StyleSheet.create({
     right: -10,
     justifyContent: 'center',
     alignItems: 'center'
+  },
 
-    
-    
-  }
+  
 });
 
 export default ProfileScreen;

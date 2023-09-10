@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Drawer = createDrawerNavigator();

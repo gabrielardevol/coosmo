@@ -1,52 +1,94 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
-import pfpImage from '../../assets/favicon.png'
+import React from 'react';
+import { View, Text, Image, Button, StyleSheet, ScrollView } from 'react-native';
+import pfpImage from '../../assets/favicon.png';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faPen } from '@fortawesome/free-solid-svg-icons/faPen';
+// import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faPen } from '@fortawesome/free-solid-svg-icons/faPen'
-
-
-
-function ProfileScreen() {
+function ProfileHashtags() {
+  const hashtags = ["Pizza", "Series", "Música", "Playa", "Montaña"];
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',  }}>
-      <View style={{backgroundColor: "green", flex: 1, justifyContent: "center"}}>
-        <View>
-          <View style={[styles.container, { width: 150, height: 150 }]}>      
-            <Image source={pfpImage} style={styles.image} />
-          </View>
-          <View style={[styles.imageButton, { width: 50, height: 50 }]}>   
-            <FontAwesomeIcon icon={ faPen } size={ 28 } />   
-          </View>
-        </View>
-      </View>
-
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Hola</Text>
-      </View>
-
-      <View style={{ flex: 1 }}>
-        <Text>Hola</Text>
+    <View>
+      <Text style={styles.h2}>Hashtags</Text>
+      <View style={styles.hashtagContainer}>
+        {hashtags.map((tag, index) => (
+          <Text style={styles.hashtag} key={index}>
+            {tag}
+          </Text>
+        ))}
       </View>
     </View>
   );
 }
 
+function ProfileScreen() {
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.profileInfo}>
+        <View style={styles.profileImageContainer}>
+          <Image source={pfpImage} style={styles.profileImage} />
+          <View style={styles.editButton}>
+            <FontAwesomeIcon icon={faPen} size={28} />
+          </View>
+        </View>
+        <Text style={styles.profileName}>Manolo, 73</Text>
+        <View style={styles.buttonRow}>
+          {/* <TouchableOpacity>
+            <View style={styles.button}>
+              <Text>Touch Here</Text>
+            </View>
+          </TouchableOpacity> */}
+        </View>
+      </View>
+      <View style={styles.aboutMe}>
+        <Text style={styles.sectionTitle}>
+          Acerca de ti
+          <FontAwesomeIcon icon={faPen} />
+        </Text>
+        <Text style={styles.aboutMeText}>
+          Mmmme encanta la variedad en todas las fotos de aquí. Es como un libro del Dr. Seuss: Un pez muerto, dos peces muertos, pez rojo muerto, pez azul muerto.
+        </Text>
+        <ProfileHashtags />
+        <ProfileHashtags />
+        <ProfileHashtags />
+        <ProfileHashtags />
+
+        <ProfileHashtags />
+        <ProfileHashtags />
+        <ProfileHashtags />
+        <ProfileHashtags />
+        <ProfileHashtags />
+        <ProfileHashtags />
+
+      </View>
+    </ScrollView>
+  );
+}
+
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 50, // Set this value to half of the width and height for a perfect circle
-    overflow: 'hidden',
-  },
-  image: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+  },
+  profileInfo: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  profileImageContainer: {
+    alignItems: 'center',
+    position: 'relative',
+  },
+  profileImage: {
     width: 150,
     height: 150,
     resizeMode: 'contain',
-    backgroundColor: 'red',
-    borderRadius: 5000
+    backgroundColor: 'blue',
+    borderRadius: 5000,
   },
-  imageButton: {
-    flex: 1,
+  editButton: {
     width: 60,
     height: 60,
     resizeMode: 'contain',
@@ -56,10 +98,46 @@ const styles = StyleSheet.create({
     bottom: -10,
     right: -10,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
-
-  
+  profileName: {
+    fontSize: 40,
+  },
+  buttonRow: {
+    flexDirection: 'row',
+  },
+  button: {
+    backgroundColor: 'red',
+  },
+  aboutMe: {
+    flex: 1,
+    margin: 10,
+  },
+  sectionTitle: {
+    color: 'blue',
+    fontSize: 24,
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
+    borderBottomStyle: 'solid',
+  },
+  aboutMeText: {
+    fontSize: 17,
+  },
+  hashtagContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignContent: 'flex-start',
+    gap: 10,
+  },
+  hashtag: {
+    backgroundColor: 'grey',
+    color: 'white',
+    padding: 10,
+    borderRadius: 12,
+  },
+  h2: {
+    fontSize: 30,
+  },
 });
 
 export default ProfileScreen;

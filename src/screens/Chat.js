@@ -5,12 +5,14 @@ function ChatScreen() {
     {name: "Gemma", message: "Holiii", color: "green"},
     {name: "Norman", message: "Entiendo lo que dices, pero...", color: "blue"},
     {name: "Javi", message: "Hahaha que guay", color: "pink"},
-    {name: "Ornella", message: "Qué bueno", color: "turquoise"}
+    {name: "Ornella", message: "Qué bueno", color: "turquoise"},
+    {name: "Carla", message: ":)", color: "red"}
+
 
 
   ]
     return (
-      <View>
+      <View style={{backgroundColor: "white", height: 1000}}>
       {chats.map((element, index) => {
         return (
           <View style={styles.chatContainer}>

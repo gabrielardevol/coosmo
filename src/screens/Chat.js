@@ -18,7 +18,7 @@ function ChatScreen() {
           <View style={styles.chatContainer}>
           <View  style={{...styles.pfp,     backgroundColor: element.color}} />
             <View>
-              <Text key={index} style={{fontSize: 22}}>{element.name}</Text>
+              <Text key={index} style={{fontSize: 24}}>{element.name}</Text>
               <Text key={index} >{element.message}</Text>
             </View>
           </View>

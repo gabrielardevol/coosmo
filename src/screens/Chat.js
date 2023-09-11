@@ -36,15 +36,15 @@ const styles = StyleSheet.create({
     alignItems: "center", 
     borderBottomWidth: 1, 
     borderBottomColor: "grey",
-    marginTop: 5, 
     marginRight: 20, 
-    marginLeft: 20
+    marginLeft: 20,
+
 },
  pfp: {
     width: 60,
     height: 60,
     borderRadius: 40,
     marginLeft: 0,
-    margin: 15
+    margin: 15,
   },})
 export default ChatScreen;

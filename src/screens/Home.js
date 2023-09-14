@@ -1,19 +1,11 @@
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import LandingStack from './Landing';
 
 const Drawer = createDrawerNavigator();
-
-// function HomeScreen({ navigation }) {
-//     return (
-//       <View style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: "red" }} >
-//         <View style={{backgroundColor: "green", alignItems: 'flex-end'}}>
-//         </View>
-//         <View style={{backgroundColor: "pink", flex: 1,  alignItems: 'center', justifyContent: "center"}}>
-//         <Text>Home Screen (options: headerShown: false)</Text>
-//         </View>
-//       </View>
-//     );
-// }
 
   import { WebView } from 'react-native-webview';
 
@@ -25,7 +17,6 @@ const Drawer = createDrawerNavigator();
     />
     );
   };
-
 
 function HomeDrawer() {
   return (
@@ -41,31 +32,16 @@ function HomeDrawer() {
         }}
       />
       <Drawer.Screen
-        name="Hamburguer"
-        component={HomeHamburguer}
+        name="Landing stack"
+        component={LandingStack}
         options={{
-          title: 'Hamburguer Screen',
+          title: 'Landing stack',
         }}
       />
     </Drawer.Navigator>
   );
 }
 
-
-
-function HomeHamburguer({ navigation }) {
-  return (
-    <View style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: "red" }} >
-      <View style={{backgroundColor: "green", alignItems: 'flex-end'}}>
-  
-      </View>
-
-      <View style={{backgroundColor: "purple", flex: 1,  alignItems: 'center', justifyContent: "center"}}>
-      <Text>Home Hamburguer (options: headerShown: falsssse)</Text>
-      </View>
-    </View>
-  );
-}
 
 
 export default HomeDrawer;

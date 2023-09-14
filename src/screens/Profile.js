@@ -3,6 +3,7 @@ import { View, Text, Image, Button, StyleSheet, ScrollView } from 'react-native'
 import pfpImage from '../../assets/favicon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons/faPen';
+import { SafeAreaView } from 'react-native'
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
@@ -24,45 +25,49 @@ function ProfileHashtags() {
 
 function ProfileScreen() {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.profileInfo}>
-        <View style={styles.profileImageContainer}>
-          <Image source={pfpImage} style={styles.profileImage} />
-          <View style={styles.editButton}>
-            <FontAwesomeIcon icon={faPen} size={28} />
+    <SafeAreaView contentContainerStyle={styles.container}>
+      <ScrollView>
+
+        <View style={styles.profileInfo}>
+          <View style={styles.profileImageContainer}>
+            <Image source={pfpImage} style={styles.profileImage} />
+            <View style={styles.editButton}>
+              <FontAwesomeIcon icon={faPen} size={28} />
+            </View>
           </View>
-        </View>
-        <Text style={styles.profileName}>Manolo, 73</Text>
-        <View style={styles.buttonRow}>
-          {/* <TouchableOpacity>
+          <Text style={styles.profileName}>Manolo, 73</Text>
+          <View style={styles.buttonRow}>
+            {/* <TouchableOpacity>
             <View style={styles.button}>
               <Text>Touch Here</Text>
             </View>
           </TouchableOpacity> */}
+          </View>
         </View>
-      </View>
-      <View style={styles.aboutMe}>
-        <Text style={styles.sectionTitle}>
-          Acerca de ti
-          <FontAwesomeIcon icon={faPen} />
-        </Text>
-        <Text style={styles.aboutMeText}>
-          Mmmme encanta la variedad en todas las fotos de aquí. Es como un libro del Dr. Seuss: Un pez muerto, dos peces muertos, pez rojo muerto, pez azul muerto.
-        </Text>
-        <ProfileHashtags />
-        <ProfileHashtags />
-        <ProfileHashtags />
-        <ProfileHashtags />
+        <View style={styles.aboutMe}>
+          <Text style={styles.sectionTitle}>
+            Acerca de ti
+            <FontAwesomeIcon icon={faPen} />
+          </Text>
+          <Text style={styles.aboutMeText}>
+            Mmmme encanta la variedad en todas las fotos de aquí. Es como un libro del Dr. Seuss: Un pez muerto, dos peces muertos, pez rojo muerto, pez azul muerto.
+          </Text>
+          <ProfileHashtags />
+          <ProfileHashtags />
+          <ProfileHashtags />
+          <ProfileHashtags />
 
-        <ProfileHashtags />
-        <ProfileHashtags />
-        <ProfileHashtags />
-        <ProfileHashtags />
-        <ProfileHashtags />
-        <ProfileHashtags />
+          <ProfileHashtags />
+          <ProfileHashtags />
+          <ProfileHashtags />
+          <ProfileHashtags />
+          <ProfileHashtags />
+          <ProfileHashtags />
 
-      </View>
-    </ScrollView>
+        </View>
+
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -72,6 +77,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',
+
   },
   profileInfo: {
     flex: 1,

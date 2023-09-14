@@ -11,7 +11,7 @@ import Input from '../components/Form';
 // import SignupScreen2 from './Signup';
 // import SignupScreen3 from './Signup';
 import { SignupScreen1, SignupScreen2, SignupScreen3 } from './Signup';
-
+import { styles } from '../styles/stylesheet';
 
 const Stack = createStackNavigator();
 
@@ -124,38 +124,7 @@ const LoginScreen = () => {
 };
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: "white"
-  },
 
-  button: {
-    backgroundColor: 'navy',
-    padding: 10,
-    borderRadius: 5,
-
-    // width: 300
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: "center",
-
-  },
-
-  textButtonText: {
-    fontSize: 16,
-    color: 'black',
-    textDecorationLine: 'underline',
-    alignSelf: "center"
-  },
-
-  textInput: {backgroundColor: "white", borderColor: "navy", borderWidth: 1, borderRadius: 8, paddingLeft: 10 ,padding: 5, marginTop: 10, marginBottom: 10}
-});
 
 export default LandingStack;
 

@@ -16,9 +16,9 @@ export const SignupScreen1 = ({navigation}) => {
         <View style={{flex: 1, backgroundColor: "white"}}>
 
         <View style={{width: 350, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
-        <Text style={{fontSize: 40, color: "navy", textAlign: "center"}}>1/3</Text>
+        <Text style={{...styles.colorfulText,  ...styles.h1,  textAlign: "center"}}>1/3</Text>
 
-          <Text style={{fontSize: 24, color: "navy"}}>¡Crea tu nueva cuenta!</Text>
+          <Text style={{...styles.h2, ...styles.colorfulText}}>¡Crea tu nueva cuenta!</Text>
               <Input name="name" 
               label="Inserta tu nombre y apellidos" 
               placeholder="Nombre" 
@@ -50,9 +50,9 @@ export  const SignupScreen2 = ({navigation}) => {
         <View style={{flex: 1, backgroundColor: "white"}}>
 
         <View style={{width: 350, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
-        <Text style={{fontSize: 40, color: "navy", textAlign: "center"}}>2/3</Text>
+        <Text style={{...styles.colorfulText,  ...styles.h1,  textAlign: "center"}}>2/3</Text>
 
-          <Text style={{fontSize: 24, color: "navy"}}>¡Crea tu nueva cuenta!</Text>
+          <Text style={{...styles.h2,  ...styles.colorfulText}}>¡Crea tu nueva cuenta!</Text>
               <Input name="name" 
               label="Inserta tu nombre y apellidos" 
               placeholder="Nombre" 
@@ -81,8 +81,8 @@ export  const SignupScreen2 = ({navigation}) => {
       {({ handleChange, handleBlur, handleSubmit, values }) => (
         <View style={{flex: 1, backgroundColor: "white"}}>
             <View style={{width: 350, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
-                <Text style={{fontSize: 40, color: "navy", textAlign: "center"}}>3/3</Text>
-                <Text style={{fontSize: 24, color: "navy"}}>¡Crea tu nueva cuenta!</Text>
+            <Text style={{...styles.colorfulText, ...styles.h1, textAlign: "center"}}>3/3</Text>
+                <Text style={{...styles.h2,  ...styles.colorfulText}}>¡Crea tu nueva cuenta!</Text>
                 <Input name="name" 
                 label="Inserta tu nombre y apellidos" 
                 placeholder="Nombre" 

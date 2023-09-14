@@ -5,10 +5,6 @@ export const styles = StyleSheet.create({  button: {
     padding: 10,
     borderRadius: 5,
   },
-
-
-    
-
     container: {
       flex: 1,
       justifyContent: 'center',
@@ -20,17 +16,13 @@ export const styles = StyleSheet.create({  button: {
       backgroundColor: 'navy',
       padding: 10,
       borderRadius: 5,
-  
-      // width: 300
-    },
+      },
     buttonText: {
       color: 'white',
       fontSize: 16,
       fontWeight: 'bold',
       textAlign: "center",
-  
     },
-  
     textButtonText: {
       fontSize: 16,
       color: 'black',
@@ -38,6 +30,13 @@ export const styles = StyleSheet.create({  button: {
       alignSelf: "center"
     },
   
-    textInput: {backgroundColor: "white", borderColor: "navy", borderWidth: 1, borderRadius: 8, paddingLeft: 10 ,padding: 5, marginTop: 10, marginBottom: 10}
-
+    textInput: {backgroundColor: "white", borderColor: "navy", borderWidth: 1, borderRadius: 8, paddingLeft: 10 ,padding: 5, marginTop: 10, marginBottom: 10},
+    
+    
+    
+    
+    
+    colorfulText: {color: "navy"},
+    h1: {fontSize: 40},
+    h2: {fontSize: 24}
 })

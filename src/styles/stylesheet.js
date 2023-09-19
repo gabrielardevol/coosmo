@@ -32,5 +32,6 @@ export const styles = StyleSheet.create({  button: {
   h1: {fontSize: 40},
   h2: {fontSize: 24},
   p: {fontSize: 16},
+  margin: {width: "80%"}
   
 })

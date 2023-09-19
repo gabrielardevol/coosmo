@@ -68,11 +68,11 @@ const LandingStack = () => {
 
 const LandingPage = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <View style={{justifyContent: "center", alignItems: "center", flex: 1, ...styles.gap, ...styles.background}}>
       <View>
         <View style={{width: 100, height: 100, borderRadius: 100, backgroundColor: "navy", alignSelf: "center"}}></View>
-        <Text style={{fontSize: 50, color: "navy", textAlign: "center"}}>coosmos</Text>
-        <Text style={{width: 300, textAlign: "center", fontSize: 16}}>Descubre conexiones reales a través de la astrologia. ¿Estás list@?</Text>
+        <Text style={{...styles.h1, ...styles.colorfulText, textAlign: "center"}}>coosmos</Text>
+        <Text style={{...styles.p, width: 300, alignSelf: "center", textAlign: "center"}}>Descubre conexiones reales a través de la astrologia. ¿Estás list@?</Text>
       </View>
 
       <View style={{gap: 15}}>
@@ -101,7 +101,7 @@ const LoginScreen = () => {
     onSubmit={values => console.log(values)}
     >
     {({ handleChange, handleBlur, handleSubmit, values }) => (
-      <View style={{flex: 1, backgroundColor: "white"}}>
+      <View style={{flex: 1,            ...styles.background,      }}>
       <View style={{width: 350, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
         <Text style={{fontSize: 24, color: "navy"}}>¡Hola de nuevo!</Text>
             <Input name="email" label="Inserta tu correo electrónico" placeholder="correo electrónico" handleChange={handleChange} handleBlur={handleBlur} values={values} />

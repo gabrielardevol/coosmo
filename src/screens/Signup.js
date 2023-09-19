@@ -13,9 +13,10 @@ export const SignupScreen1 = ({navigation}) => {
       >
 
       {({ handleChange, handleBlur, handleSubmit, values }) => (
-        <View style={{flex: 1, backgroundColor: "white"}}>
+        <View style={{flex: 1,            ...styles.background,
+        }}>
 
-        <View style={{width: 350, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
+        <View style={{width: 350, alignSelf: "center", flex: 1, justifyContent: "center"}}>
         <Text style={{...styles.colorfulText,  ...styles.h1,  textAlign: "center"}}>1/3</Text>
 
           <Text style={{...styles.h2, ...styles.colorfulText}}>¡Crea tu nueva cuenta!</Text>
@@ -47,7 +48,8 @@ export  const SignupScreen2 = ({navigation}) => {
       >
 
       {({ handleChange, handleBlur, handleSubmit, values }) => (
-        <View style={{flex: 1, backgroundColor: "white"}}>
+        <View style={{flex: 1,             ...styles.background,
+        }}>
 
         <View style={{width: 350, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
         <Text style={{...styles.colorfulText,  ...styles.h1,  textAlign: "center"}}>2/3</Text>
@@ -79,7 +81,8 @@ export  const SignupScreen2 = ({navigation}) => {
       onSubmit={values => console.log(values)}
       >
       {({ handleChange, handleBlur, handleSubmit, values }) => (
-        <View style={{flex: 1, backgroundColor: "white"}}>
+        <View style={{flex: 1,             ...styles.background,
+        }}>
             <View style={{width: 350, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
             <Text style={{...styles.colorfulText, ...styles.h1, textAlign: "center"}}>3/3</Text>
                 <Text style={{...styles.h2,  ...styles.colorfulText}}>¡Crea tu nueva cuenta!</Text>

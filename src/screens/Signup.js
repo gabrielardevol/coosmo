@@ -51,7 +51,7 @@ export  const SignupScreen2 = ({navigation}) => {
         <View style={{flex: 1,             ...styles.background,
         }}>
 
-        <View style={{...styles.margin, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
+        <View style={{...styles.margin, alignSelf: "center", flex: 1, justifyContent: "center"}}>
         <Text style={{...styles.colorfulText,  ...styles.h1,  textAlign: "center"}}>2/3</Text>
 
         <CreaTuNuevaCuenta />
@@ -83,7 +83,7 @@ export  const SignupScreen2 = ({navigation}) => {
       {({ handleChange, handleBlur, handleSubmit, values }) => (
         <View style={{flex: 1,             ...styles.background,
         }}>
-            <View style={{...styles.margin, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
+            <View style={{...styles.margin, alignSelf: "center", flex: 1, justifyContent: "center"}}>
             <Text style={{...styles.colorfulText, ...styles.h1, textAlign: "center"}}>3/3</Text>
             <CreaTuNuevaCuenta />
                 <Input name="name" 

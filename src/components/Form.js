@@ -7,7 +7,8 @@ const Input = (props) => {
             <TextInput
                 placeholder={props.placeholder}
             onChangeText={props.handleChange(props.name)}
-            value={props.Orbita[props.name]}
+            onBlur={props.handleBlur(props.name)}
+            value={props.values[props.name]}
             style={styles.textInput}
             />
         </View>

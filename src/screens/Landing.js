@@ -4,9 +4,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons/faEye';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
+import { Formik } from 'formik';
 
-import Input from './Form';
+import Input from '../components/Form';
+// import SignupScreen1 from './Signup';
+// import SignupScreen2 from './Signup';
+// import SignupScreen3 from './Signup';
+import { SignupScreen1, SignupScreen2, SignupScreen3 } from './Signup';
+import { styles } from '../styles/stylesheet';
 
 const Stack = createStackNavigator();
 
@@ -33,8 +38,24 @@ const LandingStack = () => {
 
         
         <Stack.Screen
-        name="Signup"
-        component={SignupScreen}
+        name="Signup1"
+        component={SignupScreen1}
+        options={{
+          title: 'Signup',
+        }}
+        />
+
+        <Stack.Screen
+        name="Signup2"
+        component={SignupScreen2}
+        options={{
+          title: 'Signup',
+        }}
+        />
+
+        <Stack.Screen
+        name="Signup3"
+        component={SignupScreen3}
         options={{
           title: 'Signup',
         }}
@@ -47,11 +68,11 @@ const LandingStack = () => {
 
 const LandingPage = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <View style={{justifyContent: "center", alignItems: "center", flex: 1, ...styles.gap, ...styles.background}}>
       <View>
         <View style={{width: 100, height: 100, borderRadius: 100, backgroundColor: "navy", alignSelf: "center"}}></View>
-        <Text style={{fontSize: 50, color: "navy", textAlign: "center"}}>coosmos</Text>
-        <Text style={{width: 300, textAlign: "center", fontSize: 16}}>Descubre conexiones reales a través de la astrologia. ¿Estás list@?</Text>
+        <Text style={{...styles.h1, ...styles.colorfulText, textAlign: "center"}}>coosmos</Text>
+        <Text style={{...styles.p, width: 300, alignSelf: "center", textAlign: "center"}}>Descubre conexiones reales a través de la astrologia. ¿Estás list@?</Text>
       </View>
 
       <View style={{gap: 15}}>
@@ -62,7 +83,7 @@ const LandingPage = ({navigation}) => {
           <Text style={styles.buttonText}>Inicia sesión</Text>
         </TouchableOpacity>
         <TouchableOpacity
-        onPress={() => navigation.navigate('Signup')}
+        onPress={() => navigation.navigate('Signup1')}
         >
           <Text style={styles.textButtonText}>¿No tienes cuenta? Crea una nueva</Text>
         </TouchableOpacity>
@@ -80,8 +101,8 @@ const LoginScreen = () => {
     onSubmit={values => console.log(values)}
     >
     {({ handleChange, handleBlur, handleSubmit, values }) => (
-      <View style={{flex: 1, backgroundColor: "white"}}>
-      <View style={{width: 350, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
+      <View style={{flex: 1,            ...styles.background,      }}>
+      <View style={{...styles.margin, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
         <Text style={{fontSize: 24, color: "navy"}}>¡Hola de nuevo!</Text>
             <Input name="email" label="Inserta tu correo electrónico" placeholder="correo electrónico" handleChange={handleChange} handleBlur={handleBlur} values={values} />
         <View>
@@ -102,78 +123,9 @@ const LoginScreen = () => {
   );
 };
 
-const SignupScreen = () => {
-    return (
-      <Formik
-      initialValues={{ email: '' }}
-      onSubmit={values => console.log(values)}
-      >
 
-      {({ handleChange, handleBlur, handleSubmit, values }) => (
-        <View style={{flex: 1, backgroundColor: "white"}}>
 
-        <View style={{width: 350, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
-        <Text style={{fontSize: 40, color: "navy", textAlign: "center"}}>1/3</Text>
-
-          <Text style={{fontSize: 24, color: "navy"}}>¡Crea tu nueva cuenta!</Text>
-              <Input name="name" 
-              label="Inserta tu nombre y apellidos" 
-              placeholder="Nombre" 
-              handleChange={handleChange} 
-              handleBlur={handleBlur} 
-              values={values} />
-          <View>
-          <Input name="lastName" label="" placeholder="Apellidos" handleChange={handleChange} handleBlur={handleBlur} values={values} />
-          </View>
-          <TouchableOpacity 
-          style={{...styles.button, width: 40, alignSelf: "center"}}
-          onPress={handleSubmit}        >
-            <Text style={styles.buttonText}>
-                <FontAwesomeIcon icon={faArrowRight} style={{position: "absolute", top: 42, right: 15, color: "white"}}/>
-            </Text>
-          </TouchableOpacity>
-          </View>
-          <Text style={{position: "absolute", bottom: 10, alignSelf: "center"}}>Sobre coosmos</Text>
-        </View>
-      )}
-      </Formik>
-    );
-  };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: "white"
-  },
-
-  button: {
-    backgroundColor: 'navy',
-    padding: 10,
-    borderRadius: 5,
-
-    // width: 300
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: "center",
-
-  },
-
-  textButtonText: {
-    fontSize: 16,
-    color: 'black',
-    textDecorationLine: 'underline',
-    alignSelf: "center"
-  },
-
-  textInput: {backgroundColor: "white", borderColor: "navy", borderWidth: 1, borderRadius: 8, paddingLeft: 10 ,padding: 5, marginTop: 10, marginBottom: 10}
-});
 
 export default LandingStack;
 
 
-import { Formik } from 'formik';

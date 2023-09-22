@@ -102,7 +102,7 @@ const LoginScreen = () => {
     >
     {({ handleChange, handleBlur, handleSubmit, values }) => (
       <View style={{flex: 1,            ...styles.background,      }}>
-      <View style={{...styles.margin, alignSelf: "center", gap: 20, flex: 1, justifyContent: "center"}}>
+      <View style={{...styles.margin, ...styles.gap, alignSelf: "center", flex: 1, justifyContent: "center"}}>
         <Text style={{fontSize: 24, color: "navy"}}>¡Hola de nuevo!</Text>
             <Input name="email" label="Inserta tu correo electrónico" placeholder="correo electrónico" handleChange={handleChange} handleBlur={handleBlur} values={values} />
         <View>
@@ -112,7 +112,7 @@ const LoginScreen = () => {
         </View>
         <TouchableOpacity 
         style={styles.button}
-        onPress={handleSubmit}        >
+        onPress={handleSubmit} >
           <Text style={styles.buttonText}>Inicia sesión</Text>
         </TouchableOpacity>
         </View>

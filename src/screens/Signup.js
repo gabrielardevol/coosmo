@@ -107,7 +107,7 @@ export  const SignupScreen2 = ({navigation}) => {
       <View style={styles.container}>
         {renderLabel()}
         <Dropdown
-          style={[styles.textInput, {backgroundColor: "red", fontSize: 2}]}
+          style={[styles.textInput, {backgroundColor: "red", height: 40}]}
           // style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
           // placeholderStyle={styles.placeholderStyle}
           // selectedTextStyle={styles.selectedTextStyle}
@@ -115,7 +115,7 @@ export  const SignupScreen2 = ({navigation}) => {
           // iconStyle={styles.iconStyle}
           data={data}
           // search
-          maxHeight={300}
+          // maxHeight={300}
           labelField="label"
           valueField="value"
           placeholder={!isFocus ? 'Select item' : '...'}
@@ -153,14 +153,17 @@ export  const SignupScreen2 = ({navigation}) => {
             <View style={{...styles.margin, alignSelf: "center", flex: 1, justifyContent: "center"}}>
             <Text style={{...styles.colorfulText, ...styles.h1, textAlign: "center"}}>3/3</Text>
             <CreaTuNuevaCuenta />
-
+                <View style={{backgroundColor: "blue", flexDirection: "row"}}>
                 <DropdownComponent></DropdownComponent>
                 <Input name="name" 
                 label="Inserta tu nombre y apellidos" 
                 placeholder="Nombre" 
                 handleChange={handleChange} 
                 handleBlur={handleBlur} 
-                values={values} />
+                values={values} 
+                />
+                </View>
+                
 
                 <Input name="lastName" 
                 label="" 

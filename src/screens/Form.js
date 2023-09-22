@@ -8,7 +8,7 @@ const Input = (props) => {
                 placeholder={props.placeholder}
             onChangeText={props.handleChange(props.name)}
             value={props.Orbita[props.name]}
-            style={styles.textInput}
+            style={{...styles.textInput, ...props.style}}
             />
         </View>
     )

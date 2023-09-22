@@ -95,8 +95,10 @@ export  const SignupScreen2 = ({navigation}) => {
     const renderLabel = () => {
       if (value || isFocus) {
         return (
-          <Text style={[styles.label, isFocus && { color: 'blue' }]}>
-            Dropdown label
+          <Text style={[styles.label,{ color: 'blue' }]}>
+          {/* <Text style={[styles.label, isFocus && { color: 'blue' }]}> */}
+
+            {/* Dropdown label */}
           </Text>
         );
       }
@@ -104,10 +106,10 @@ export  const SignupScreen2 = ({navigation}) => {
     };
 
     return (
-      <View style={styles.container}>
+      <View style={{ flex: 1}}>
         {renderLabel()}
         <Dropdown
-          style={[styles.textInput, {backgroundColor: "red", height: 40}]}
+          style={[styles.textInput, {flex: 1, }]}
           // style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
           // placeholderStyle={styles.placeholderStyle}
           // selectedTextStyle={styles.selectedTextStyle}
@@ -148,30 +150,25 @@ export  const SignupScreen2 = ({navigation}) => {
       onSubmit={values => console.log(values)}
       >
       {({ handleChange, handleBlur, handleSubmit, values }) => (
-        <View style={{flex: 1,             ...styles.background,
-        }}>
+        <View style={{flex: 1, ...styles.background}}>
             <View style={{...styles.margin, alignSelf: "center", flex: 1, justifyContent: "center"}}>
             <Text style={{...styles.colorfulText, ...styles.h1, textAlign: "center"}}>3/3</Text>
             <CreaTuNuevaCuenta />
-                <View style={{backgroundColor: "blue", flexDirection: "row"}}>
+              <Input name="lastName" 
+              label="Datos de contacto" 
+              placeholder="Apellidos" 
+              handleChange={handleChange} 
+              handleBlur={handleBlur} 
+              values={values}
+              />
+              <View style={{flexDirection: "row", ...styles.gap}}>
                 <DropdownComponent></DropdownComponent>
-                <Input name="name" 
-                label="Inserta tu nombre y apellidos" 
-                placeholder="Nombre" 
-                handleChange={handleChange} 
-                handleBlur={handleBlur} 
-                values={values} 
-                />
-                </View>
-                
-
-                <Input name="lastName" 
-                label="" 
-                placeholder="Apellidos" 
-                handleChange={handleChange} 
-                handleBlur={handleBlur} 
-                values={values} />
-                <ArrowButton onPress={handleSubmit}/>
+                <TextInput
+                placeholder="000 000 000"
+                style={{...styles.textInput, flex: 3}}
+            />
+              </View>
+              <ArrowButton onPress={handleSubmit}/>
             </View>
             <FormFooter/>
         </View>
